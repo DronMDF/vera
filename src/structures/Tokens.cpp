@@ -263,6 +263,17 @@ boost::wave::token_id tokenIdFromTokenFilter(const Vera::Structures::Tokens::Tok
         tokenMap["msext_region"] = static_cast<boost::wave::token_id>(419);
         tokenMap["msext_endregion"] = static_cast<boost::wave::token_id>(420);
         tokenMap["import"] = static_cast<boost::wave::token_id>(421);
+        tokenMap["alignas"] = static_cast<boost::wave::token_id>(422);
+        tokenMap["alignof"] = static_cast<boost::wave::token_id>(423);
+        tokenMap["char16_t"] = static_cast<boost::wave::token_id>(424);
+        tokenMap["char32_t"] = static_cast<boost::wave::token_id>(425);
+        tokenMap["constexpr"] = static_cast<boost::wave::token_id>(426);
+        tokenMap["decltype"] = static_cast<boost::wave::token_id>(427);
+        tokenMap["noexcept"] = static_cast<boost::wave::token_id>(428);
+        tokenMap["nullptr"] = static_cast<boost::wave::token_id>(429);
+        tokenMap["staticassert"] = static_cast<boost::wave::token_id>(430);
+        tokenMap["threadlocal"] = static_cast<boost::wave::token_id>(431);
+        tokenMap["rawstringlit"] = static_cast<boost::wave::token_id>(432);
     }
 
     const TokenFilterToIdMap::const_iterator it = tokenMap.find(filter);
@@ -373,8 +384,7 @@ void Tokens::parse(const SourceFiles::FileName & name, const FileContent & src)
 
             const position_type pos(name.c_str());
             lexer_type it = lexer_type(src.begin(), src.end(), pos,
-                boost::wave::language_support(
-                    boost::wave::support_cpp | boost::wave::support_option_long_long));
+                boost::wave::language_support(boost::wave::support_cpp0x));
             const lexer_type end = lexer_type();
 
             const int lineCount = SourceLines::getLineCount(name);

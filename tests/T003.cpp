@@ -33,3 +33,4 @@ new foo();
 struct Foo;
 union Foo;
 using foo;
+foo = R"x(<xml type="class"/>)x";

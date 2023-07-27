@@ -594,7 +594,7 @@ vera_add_test(RuleDUMP
 
 3/0\tcppcomment\t// some stuff here
 
-4/0\tmsext_stdcall\t__stdcall
+4/0\tidentifier\t__stdcall
 4/9\tnewline\t
 
 5/0\trightbrace\t}
